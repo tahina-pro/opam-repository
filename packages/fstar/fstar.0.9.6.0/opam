@@ -21,7 +21,8 @@ depexts: [
 ]
 build: [
   [make "PREFIX=%{prefix}%" "-C" "src/ocaml-output"]
-  [make "PREFIX=%{prefix}%" "-C" "ulib/ml"]
+  [make "PREFIX=%{prefix}%" "-C" "ulib" "install-fstarlib"]
+  [make "PREFIX=%{prefix}%" "-C" "ulib" "install-fstar-tactics"]
 ]
 install: [
   [make "PREFIX=%{prefix}%" "-C" "src/ocaml-output" "install-opam"]
@@ -33,6 +34,9 @@ remove: [
       "%{prefix}%/etc/fstar"
       "%{prefix}%/bin/fstar"
       "%{prefix}%/share/fstar" ]
+  [ "ocamlfind" "remove" "fstarlib" ]
+  [ "ocamlfind" "remove" "fstar-compiler-lib" ]
+  [ "ocamlfind" "remove" "fstar-tactics-lib" ]
 ]
 available: [ ocaml-version >= "4.02.3" & (ocaml-version < "4.03.0" | (ocaml-version >= "4.04.0" & ocaml-version < "4.07.0")) ]
 dev-repo: "git://github.com/FStarLang/FStar"
