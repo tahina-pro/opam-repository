@@ -24,7 +24,7 @@ build: [
   [make "PREFIX=%{prefix}%" "-C" "ulib/ml"]
 ]
 install: [
-  [make "PREFIX=%{prefix}%" "-C" "src/ocaml-output" "install"]
+  [make "PREFIX=%{prefix}%" "-C" "src/ocaml-output" "install-opam"]
 ]
 remove: [
   [ "rm" "-rf"
