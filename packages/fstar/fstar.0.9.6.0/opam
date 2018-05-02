@@ -25,7 +25,7 @@ build: [
   [make "PREFIX=%{prefix}%" "-C" "ulib" "install-fstar-tactics"]
 ]
 install: [
-  [make "PREFIX=%{prefix}%" "-C" "src/ocaml-output" "install-opam"]
+  [make "PREFIX=%{prefix}%" "-C" "src/ocaml-output" "install"]
 ]
 remove: [
   [ "rm" "-rf"
